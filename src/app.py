@@ -15,7 +15,7 @@ server = app.server
 app.config.suppress_callback_exceptions = True
 
 # Read csv file
-flight = pd.read_csv('Airline_Delay_Cause.csv')
+flight = pd.read_csv('../Airline_Delay_Cause.csv')
 
 # Process data
 flight.fillna(1, inplace=True)
