@@ -1,17 +1,8 @@
-<<<<<<< HEAD
-dash==2.8.1
-dash_core_components==2.0.0
-dash_html_components==2.0.0
-pandas
-plotly==5.9.0
-statsmodels==0.13.5
-=======
 dash
 dash_core_components
 dash_html_components
 pandas
 plotly
 statsmodels
->>>>>>> bf6bbb3f5a6c8632cdad7cba824ef16428341a45
 gunicorn
 dash-tools
