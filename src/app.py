@@ -15,7 +15,7 @@ server = app.server
 app.config.suppress_callback_exceptions = True
 
 # Read csv file
-flight = pd.read_csv('../Airline_Delay_Cause.csv')
+flight = pd.read_csv('Airline_Delay_Cause.csv')
 
 # Process data
 flight.fillna(1, inplace=True)
@@ -118,9 +118,7 @@ def plot_line(df):
                                         dtick='M18',
                                         tickformat='%b\n%Y'
                                         ),
-                             yaxis_title='Delay Minutes',
-                             width=1400,
-                             height=500
+                             yaxis_title='Delay Minutes'
                              )
     return line_chart
 
@@ -153,11 +151,11 @@ app.layout = html.Div(style={'margin': 'auto'},
                                                                    }
                                                             ),
                                                     html.H3('(Data source: Federal Aviation Administration (2003-2022)',
-                                                            style={'textAlign': 'center',
-                                                                   'color': '#000000',
-                                                                   'font-size': 20
-                                                                   }
-                                                            )
+                                                           style={'textAlign': 'center',
+                                                                  'color': '#000000',
+                                                                  'font-size': 20
+                                                                  }
+                                                           )
                                                     ], style={'display': 'inline-block',
                                                               'margin-left': '10px',
                                                               'vertical-align': 'middle'}
@@ -195,12 +193,44 @@ app.layout = html.Div(style={'margin': 'auto'},
                                                    ),
                                           ]),
                                 html.Br(),
-                                html.Div([html.Div(dcc.Graph(id='plot1')),  # pie chart, delay cause
-                                          html.Div(dcc.Graph(id='plot2'))  # annual delay minutes
+                                html.Div([html.Div(dcc.Graph(id='plot1'),
+                                                   style={'width': '100%',
+                                                          'height': '100%'}
+                                                   ),  # pie chart, delay cause
+                                          html.Div(dcc.Graph(id='plot2'),
+                                                   style={'width': '100%',
+                                                          'height': '100%'}
+                                                   )  # annual delay minutes
                                           ],
                                          style={'display': 'flex'}
                                          ),
-                                html.Div(dcc.Graph(id='plot3'))  # holt winters model
+                                html.A('Understanding the Reporting of Causes of Flight Delays and Cancellations',
+                                       style={'textAlign': 'left',
+                                              'font-size': 15},
+                                       href='https://www.bts.gov/topics/airlines-and-airports/understanding-reporting'
+                                            '-causes-flight-delays-and-cancellations'
+                                       ),
+                                html.Br(),
+                                html.Div(dcc.Graph(id='plot3'),
+                                         style={'width': '100%',
+                                                'height': '100%'}
+                                         ),  # holt winters model
+
+                                html.Br(),
+                                html.P(['Data Source: ',
+                                        html.A('Federal Aviation Administration (2003-2022)',
+                                               href='https://www.faa.gov/data_research'
+                                               )
+                                        ], style={'textAlign': 'center',
+                                                  'font-size': 15}
+                                       ),
+                                html.P(['Data Visualized By: ',
+                                        html.A('Samuel Zhao',
+                                               href='https://www.linkedin.com/in/samuel-zhao/'
+                                               )
+                                        ], style={'textAlign': 'center',
+                                                  'font-size': 15}
+                                       )
                                 ],
                       )
 
