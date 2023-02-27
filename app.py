@@ -144,21 +144,15 @@ app.layout = html.Div(style={'margin': 'auto'},
                                                           'width': '8%',
                                                           'height': '8%'}
                                                    ),
-                                          html.Div([html.H1('Austin Airport Delay Cause Dashboard',
-                                                            style={'textAlign': 'center',
-                                                                   'color': '#000000',
-                                                                   'font-size': 40
-                                                                   }
-                                                            ),
-                                                    html.H3('(Data source: Federal Aviation Administration (2003-2022)',
+                                          html.Div(html.H1('Austin International Airport (AUS) Delay Cause Dashboard',
                                                            style={'textAlign': 'center',
                                                                   'color': '#000000',
-                                                                  'font-size': 20
+                                                                  'font-size': 40
                                                                   }
-                                                           )
-                                                    ], style={'display': 'inline-block',
-                                                              'margin-left': '10px',
-                                                              'vertical-align': 'middle'}
+                                                           ),
+                                                   style={'display': 'inline-block',
+                                                          'margin-left': '10px',
+                                                          'vertical-align': 'middle'}
                                                    )
                                           ], style={'display': 'flex',
                                                     'align-items': 'center',
